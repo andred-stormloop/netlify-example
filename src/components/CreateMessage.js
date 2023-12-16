@@ -40,7 +40,7 @@ const CreateMessage = ({ onMessageCreated }) => {
         }
 
         // Make API request to create a new message
-        axios.post('https://ted-yak-backend-57083191e68a.herokuapp.comapi/messages/', {
+        axios.post('https://ted-yak-backend-57083191e68a.herokuapp.com/api/messages/', {
             content,
             latitude,
             longitude,

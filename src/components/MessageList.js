@@ -10,7 +10,7 @@ const MessageList = () => {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
-        axios.get('https://ted-yak-backend-57083191e68a.herokuapp.comapi/messages/')
+        axios.get('https://ted-yak-backend-57083191e68a.herokuapp.com/api/messages/')
             .then(response => setMessages(response.data))
             .catch(error => console.error('Error fetching messages:', error));
     }, []);
@@ -20,7 +20,7 @@ const MessageList = () => {
     };
 
     const handleUpvote = (id) => {
-        axios.patch(`https://ted-yak-backend-57083191e68a.herokuapp.comapi/messages/${id}/upvote/`)
+        axios.patch(`https://ted-yak-backend-57083191e68a.herokuapp.com/api/messages/${id}/upvote/`)
             .then(response => {
                 const updatedMessages = messages.map(message => (
                     message.id === response.data.id ? response.data : message
@@ -31,7 +31,7 @@ const MessageList = () => {
     };
 
     const handleComment = (messageId, commentContent) => {
-        axios.post(`https://ted-yak-backend-57083191e68a.herokuapp.comapi/messages/${messageId}/comments/`, {
+        axios.post(`https://ted-yak-backend-57083191e68a.herokuapp.com/api/messages/${messageId}/comments/`, {
             content: commentContent,
         })
             .then(response => {
