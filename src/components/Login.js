@@ -15,7 +15,7 @@ const Login = () => {
     };
 
     const handleLogin = () => {
-        axios.post('http://localhost:3000/api/token/', {
+        axios.post('https://ted-yak-backend-57083191e68a.herokuapp.com/api/token/', {
             username,
             password,
         })
